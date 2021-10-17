@@ -1,0 +1,19 @@
+import React from 'react'
+import { todosSelector } from '../store/reducers/TodoSlice'
+import { useSelector } from 'react-redux'
+
+const Navbar = () => {
+    const todos = useSelector(todosSelector)
+    return (
+        <div className='navbar'>
+            <h2>My Todo App</h2>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Total todo : {todos.length}</li>
+            </ul>
+        </div>
+    )
+}
+
+export default Navbar
